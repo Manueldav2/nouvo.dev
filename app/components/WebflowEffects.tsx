@@ -159,4 +159,33 @@ export const StickySection = ({ children, className = "" }: BaseProps) => {
       </motion.div>
     </div>
   );
+};
+
+export const AnimatedBackground = () => {
+  return (
+    <div className="fixed inset-0 -z-10 overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-[#f2f4f3] via-[#a9927d]/10 to-[#5e503f]/5" />
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(169,146,125,0.1),rgba(94,80,63,0.05))]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_0%_0%,rgba(169,146,125,0.1),rgba(94,80,63,0.05))]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_100%_0%,rgba(169,146,125,0.1),rgba(94,80,63,0.05))]" />
+      </div>
+      <motion.div
+        className="absolute inset-0 opacity-50"
+        animate={{
+          background: [
+            'radial-gradient(circle at 50% 50%, rgba(169,146,125,0.1) 0%, rgba(94,80,63,0.05) 50%, rgba(242,244,243,0) 100%)',
+            'radial-gradient(circle at 60% 40%, rgba(169,146,125,0.1) 0%, rgba(94,80,63,0.05) 50%, rgba(242,244,243,0) 100%)',
+            'radial-gradient(circle at 40% 60%, rgba(169,146,125,0.1) 0%, rgba(94,80,63,0.05) 50%, rgba(242,244,243,0) 100%)',
+            'radial-gradient(circle at 50% 50%, rgba(169,146,125,0.1) 0%, rgba(94,80,63,0.05) 50%, rgba(242,244,243,0) 100%)',
+          ],
+        }}
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+      />
+    </div>
+  );
 }; 

@@ -1,10 +1,10 @@
 "use strict";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[895],{3879:function(e,t,n){n.d(t,{Z:function(){return r}});/**
- * @license lucide-react v0.330.0 - ISC
+ * @license lucide-react v0.323.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */let r=(0,n(7461).Z)("ArrowLeft",[["path",{d:"m12 19-7-7 7-7",key:"1l729n"}],["path",{d:"M19 12H5",key:"x3x0zl"}]])},2235:function(e,t,n){n.d(t,{Z:function(){return r}});/**
- * @license lucide-react v0.330.0 - ISC
+ * @license lucide-react v0.323.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.

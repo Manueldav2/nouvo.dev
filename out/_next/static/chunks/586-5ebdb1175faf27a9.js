@@ -1,5 +1,5 @@
 "use strict";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[586],{7461:function(e,t,r){r.d(t,{Z:function(){return i}});var o=r(4090),n={xmlns:"http://www.w3.org/2000/svg",width:24,height:24,viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:2,strokeLinecap:"round",strokeLinejoin:"round"};/**
- * @license lucide-react v0.330.0 - ISC
+ * @license lucide-react v0.323.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.

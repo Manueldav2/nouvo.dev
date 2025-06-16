@@ -21,9 +21,11 @@ import {
   SmoothScroll, 
   TextReveal, 
   ImageParallax, 
-  StickySection 
+  StickySection,
+  AnimatedBackground
 } from "./components/WebflowEffects";
 import { LoadingScreen } from "./components/LoadingScreen";
+import { ContactForm } from './components/ContactForm';
 
 const scrollToSection = (sectionId: string) => {
   const element = document.getElementById(sectionId);
@@ -43,6 +45,7 @@ export default function HomePage() {
   return (
     <>
       <LoadingScreen />
+      <AnimatedBackground />
       <SmoothScroll>
         <div className="flex flex-col min-h-screen max-w-[1920px] mx-auto">
           {/* Header */}
@@ -397,25 +400,7 @@ export default function HomePage() {
                     <div className="flex-1 w-full">
                       <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-[#0a0908] mb-2 text-center md:text-left">Get in Touch</h2>
                       <p className="mb-6 text-center md:text-left text-[#22333b]">Ready to start your project? Contact us today for a free consultation.</p>
-                      <div className="space-y-4">
-                        <div className="grid gap-4 sm:grid-cols-2">
-                          <div className="space-y-2">
-                            <Label htmlFor="name">Name</Label>
-                            <Input id="name" placeholder="Enter your name" className="border-[#a9927d]/20" />
-                          </div>
-                          <div className="space-y-2">
-                            <Label htmlFor="email">Email</Label>
-                            <Input id="email" placeholder="Enter your email" type="email" className="border-[#a9927d]/20" />
-                          </div>
-                        </div>
-                        <div className="space-y-2">
-                          <Label htmlFor="message">Message</Label>
-                          <Textarea id="message" placeholder="Enter your message" className="min-h-[100px] border-[#a9927d]/20" />
-                        </div>
-                        <AnimatedElement>
-                          <Button className="w-full bg-[#22333b] hover:bg-[#0a0908] text-[#f2f4f3]">Send Message</Button>
-                        </AnimatedElement>
-                      </div>
+                      <ContactForm />
                     </div>
                     <div className="w-full md:w-64 flex flex-col items-center md:items-start gap-4 mt-8 md:mt-0">
                       <h3 className="text-xl font-semibold text-[#0a0908] mb-2">Contact Information</h3>
