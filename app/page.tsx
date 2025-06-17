@@ -57,12 +57,12 @@ export default function HomePage() {
                 </AnimatedElement>
                 <span className="ml-2 text-xl font-bold text-[#0a0908] group-hover:text-[#5e503f] transition-colors">nouvo</span>
               </Link>
-              <nav className="flex items-center gap-4 sm:gap-6">
+              <nav className="hidden md:flex items-center gap-4 sm:gap-6">
                 {[
                   { name: "Services", href: "services" },
                   { name: "Portfolio", href: "portfolio" },
-                  { name: "About", href: "about" },
-                  { name: "Contact", href: "contact" }
+                  { name: "Contact", href: "contact" },
+                  { name: "About", href: "about" }
                 ].map((item) => (
                   <AnimatedElement key={item.name}>
                     <button 
@@ -82,8 +82,57 @@ export default function HomePage() {
                   </button>
                 </AnimatedElement>
               </nav>
+              <button 
+                className="md:hidden inline-flex items-center justify-center rounded-md p-2 text-[#22333b] hover:text-[#5e503f] transition-colors"
+                onClick={() => {
+                  const mobileMenu = document.getElementById('mobile-menu');
+                  if (mobileMenu) {
+                    mobileMenu.classList.toggle('hidden');
+                  }
+                }}
+              >
+                <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              </button>
             </div>
           </AnimatedSection>
+          <div id="mobile-menu" className="hidden md:hidden bg-[#f2f4f3]/95 backdrop-blur supports-[backdrop-filter]:bg-[#f2f4f3]/60 border-b border-[#22333b]/20">
+            <nav className="flex flex-col p-4 space-y-4">
+              {[
+                { name: "Services", href: "services" },
+                { name: "Portfolio", href: "portfolio" },
+                { name: "Contact", href: "contact" },
+                { name: "About", href: "about" }
+              ].map((item) => (
+                <button 
+                  key={item.name}
+                  onClick={() => {
+                    scrollToSection(item.href);
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (mobileMenu) {
+                      mobileMenu.classList.add('hidden');
+                    }
+                  }}
+                  className="text-sm font-medium text-[#22333b] hover:text-[#5e503f] transition-colors text-left"
+                >
+                  {item.name}
+                </button>
+              ))}
+              <button 
+                onClick={() => {
+                  scrollToSection("website-idea-generator");
+                  const mobileMenu = document.getElementById('mobile-menu');
+                  if (mobileMenu) {
+                    mobileMenu.classList.add('hidden');
+                  }
+                }}
+                className="inline-flex items-center justify-center rounded-md bg-[#a9927d] px-4 py-2 text-sm font-medium text-[#f2f4f3] shadow transition-colors hover:bg-[#5e503f] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#a9927d]"
+              >
+                Create Website Idea
+              </button>
+            </nav>
+          </div>
 
           <main className="flex-1">
             {/* Hero Section */}
@@ -222,10 +271,10 @@ export default function HomePage() {
                 <div className="container mx-auto px-4 md:px-6 max-w-7xl">
                   <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-4 lg:gap-12">
                     {[
-                      { icon: Star, value: "100%", label: "Project Completion" },
-                      { icon: Users, value: "10/10", label: "Customer Service" },
-                      { icon: Target, value: "10/10", label: "Realistic Pricing" },
-                      { icon: CheckCircle, value: "100%", label: "Customer Satisfaction" }
+                      { icon: Star, value: "98%", label: "Project Completion" },
+                      { icon: Users, value: "9.8/10", label: "Customer Service" },
+                      { icon: Target, value: "9.5/10", label: "Realistic Pricing" },
+                      { icon: CheckCircle, value: "97%", label: "Customer Satisfaction" }
                     ].map((stat, index) => (
                       <AnimatedSection key={index} delay={index * 0.1}>
                         <div className="flex flex-col items-center justify-center space-y-2 text-center">
@@ -270,38 +319,43 @@ export default function HomePage() {
                       </p>
                     </div>
                   </AnimatedSection>
-                  <div className="mx-auto grid max-w-5xl items-start gap-6 py-12 lg:grid-cols-3 lg:gap-12">
+                  <div className="mx-auto grid max-w-5xl items-start gap-6 py-12 sm:grid-cols-2 lg:grid-cols-3 lg:gap-12">
                     {[
                       {
                         title: "Resume Website",
-                        description: "A professional resume website that helped land a dream job at a top tech company",
-                        image: "/placeholder.svg",
-                        tags: ["Resume", "Web Design", "Development"]
+                        description: "Professional resume website for Bella Bland (Business Marketing)",
+                        image: "/resume_website.png",
+                        url: "https://bellakbland.com/",
+                        tags: ["Resume", "Web Design", "Business"]
                       },
                       {
                         title: "Personal Portfolio",
-                        description: "A professional portfolio website that helped land a dream job",
-                        image: "/placeholder.svg",
-                        tags: ["Portfolio", "Web Design", "Development"]
+                        description: "Dance portfolio for Addi Reed, showcasing achievements and videos.",
+                        image: "/portfoli_pic.png",
+                        url: "https://addison-reed-dance-portf-9dafd.web.app/",
+                        tags: ["Portfolio", "Web Design", "Dance"]
                       },
                       {
                         title: "Business Website",
-                        description: "A business website that increased leads by 150%",
-                        image: "/placeholder.svg",
-                        tags: ["Business", "Web Design", "Development"]
+                        description: "Blast & Beyond: Pressure washing, cleanouts, and yard help for NWA.",
+                        image: "/blast_beyond_png.png",
+                        url: "https://blast-beyond.web.app/",
+                        tags: ["Business", "Web Design", "Services"]
                       }
                     ].map((project, index) => (
                       <AnimatedSection key={index} delay={index * 0.2}>
-                        <Card className="group hover:shadow-lg transition-all duration-300 border-[#a9927d]/20 hover:border-[#a9927d]/40 h-full">
+                        <Card className="w-full group hover:shadow-lg transition-all duration-300 border-[#a9927d]/20 hover:border-[#a9927d]/40 h-full">
                           <CardHeader>
-                            <div className="relative aspect-video overflow-hidden rounded-lg">
-                              <Image
-                                src={project.image}
-                                alt={project.title}
-                                fill
-                                className="object-cover transition-transform group-hover:scale-105"
-                              />
-                            </div>
+                            <a href={project.url} target="_blank" rel="noopener noreferrer">
+                              <div className="relative w-full h-48 md:h-56 overflow-hidden rounded-lg">
+                                <Image
+                                  src={project.image}
+                                  alt={project.title}
+                                  fill
+                                  className="object-cover w-full h-full transition-transform group-hover:scale-105 rounded-lg"
+                                />
+                              </div>
+                            </a>
                             <CardTitle className="text-[#0a0908] group-hover:text-[#5e503f] transition-colors">
                               {project.title}
                             </CardTitle>
@@ -318,6 +372,11 @@ export default function HomePage() {
                                   </Badge>
                                 </AnimatedElement>
                               ))}
+                            </div>
+                            <div className="mt-4">
+                              <a href={project.url} target="_blank" rel="noopener noreferrer" className="inline-block text-[#5e503f] hover:underline font-medium">
+                                Visit Site
+                              </a>
                             </div>
                           </CardContent>
                         </Card>
@@ -407,7 +466,7 @@ export default function HomePage() {
                       <div className="space-y-3 w-full">
                         <div className="flex items-center gap-2">
                           <FaUser className="text-[#a9927d]" />
-                          <span className="text-[#22333b]">Manuel</span>
+                          <span className="text-[#22333b]">Manuel David</span>
                         </div>
                         <div className="flex items-center gap-2">
                           <FaPhone className="text-[#a9927d]" />
