@@ -26,6 +26,7 @@ import {
 } from "./components/WebflowEffects";
 import { LoadingScreen } from "./components/LoadingScreen";
 import { ContactForm } from './components/ContactForm';
+import RotatingText from "./components/RotatingText"
 
 const scrollToSection = (sectionId: string) => {
   const element = document.getElementById(sectionId);
@@ -145,15 +146,31 @@ export default function HomePage() {
                         <FaRocket className="mr-2 inline-block" />
                         Custom Websites That Drive Results
                       </Badge>
-                      <TextReveal className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none text-[#0a0908]">
-                        We Build Websites That Grow Your Business
+                      <TextReveal className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none text-[#0a0908] hero-title">
+                        We Build{" "}
+                        <RotatingText
+                          texts={[
+                            "Digital Solutions",
+                            "Innovative Brands",
+                            "Athletic Portfolios",
+                            "Business Growth",
+                            "Career Success",
+                            "Online Presence"
+                          ]}
+                          splitBy="words"
+                          rotationInterval={3000}
+                          mainClassName="text-[#5e503f]"
+                          transition={{ type: "spring", damping: 20, stiffness: 250 }}
+                        />
                       </TextReveal>
-                      <TextReveal className="mx-auto text-[#22333b] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                        From business websites that increase sales to personal resume sites that land jobs, we create custom
-                        digital solutions that expand your reach and drive real results.
+                      <TextReveal className="text-[#22333b] text-2xl font-semibold">
+                        That Drive Results
+                      </TextReveal>
+                      <TextReveal className="mx-auto text-[#22333b] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed hero-description">
+                        From athlete portfolios and interactive resumes to business websites and personal brands, we create custom digital experiences that showcase your unique story and drive real results.
                       </TextReveal>
                     </AnimatedSection>
-                    <AnimatedSection delay={0.4} className="flex flex-col sm:flex-row gap-4">
+                    <AnimatedSection delay={0.4} className="flex flex-col sm:flex-row gap-4 hero-buttons">
                       <HoverScale>
                         <button 
                           onClick={() => scrollToSection("contact")}
@@ -233,7 +250,7 @@ export default function HomePage() {
                       }
                     ].map((service, index) => (
                       <AnimatedSection key={index} delay={index * 0.2}>
-                        <Card className="group hover:shadow-lg transition-all duration-300 border-[#a9927d]/20 hover:border-[#a9927d]/40 h-full">
+                        <Card className="group hover:shadow-lg transition-all duration-300 border-[#a9927d]/20 hover:border-[#a9927d]/40 h-full service-card">
                           <CardHeader>
                             <AnimatedElement className="w-12 h-12 bg-[#a9927d]/20 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                               <service.icon className="h-6 w-6 text-[#5e503f]" />
@@ -332,7 +349,7 @@ export default function HomePage() {
                         title: "Personal Portfolio",
                         description: "Dance portfolio for Addi Reed, showcasing achievements and videos.",
                         image: "/portfoli_pic.png",
-                        url: "https://addison-reed-dance-portf-9dafd.web.app/",
+                        url: "https://addisonkreed.com",
                         tags: ["Portfolio", "Web Design", "Dance"]
                       },
                       {

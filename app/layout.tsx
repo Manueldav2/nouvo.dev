@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import { EmbedAI } from './components/EmbedAI'
+import { GoogleAnalytics } from './components/GoogleAnalytics'
 
 export const metadata: Metadata = {
   title: 'nouvo',
@@ -16,8 +18,12 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <GoogleAnalytics />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <EmbedAI />
+      </body>
     </html>
   )
 }

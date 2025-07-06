@@ -102,7 +102,11 @@ export const SmoothScroll = ({ children }: BaseProps) => {
 };
 
 export const TextReveal = ({ children, className = "" }: BaseProps) => {
-  const words = (children as string).split(" ");
+  if (typeof children !== 'string') {
+    return <div className={className}>{children}</div>;
+  }
+  
+  const words = children.split(" ");
   
   return (
     <div className={className}>
