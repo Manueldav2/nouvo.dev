@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Target, ArrowRight, CheckCircle, Star, Eye, TrendingUp, Users } from "lucide-react"
+import { Target, ArrowRight, CheckCircle, Star, Eye, TrendingUp, Users, Trophy } from "lucide-react"
 import { FaRocket, FaCode, FaPalette, FaMobile, FaSearch, FaChartLine, FaUser, FaPhone, FaEnvelope } from "react-icons/fa"
 import { BsArrowUpRight, BsCheck2Circle } from "react-icons/bs"
 import { HiOutlineLightBulb } from "react-icons/hi"
@@ -151,10 +151,10 @@ export default function HomePage() {
                         We Build{" "}
                         <RotatingText
                           texts={[
+                            "Athletic Portfolios",
+                            "Sports Highlights",
                             "Digital Solutions",
                             "Innovative Brands",
-                            "Athletic Portfolios",
-                            "Business Growth",
                             "Career Success",
                             "Online Presence"
                           ]}
@@ -224,30 +224,44 @@ export default function HomePage() {
                         Digital Solutions That Drive Growth
                       </h2>
                       <p className="text-[#22333b] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                        Whether you're a business looking to increase sales or a professional seeking career advancement, we
-                        create websites that deliver measurable results.
+                        Whether you're an athlete showcasing your achievements, a business looking to increase sales, or a professional seeking career advancement, we create websites that deliver measurable results.
                       </p>
                     </div>
                   </AnimatedSection>
-                  <div className="mx-auto grid max-w-5xl items-start gap-6 py-12 lg:grid-cols-3 lg:gap-12">
+                  <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mx-auto max-w-5xl mt-8">
                     {[
+                      {
+                        icon: Trophy,
+                        title: "Athletic Portfolios",
+                        description: "Stand out to recruiters and coaches with a dynamic showcase of your athletic achievements.",
+                        features: [
+                          "Game highlights and statistics",
+                          "Performance metrics tracking",
+                          "Recruitment contact forms",
+                          "Media galleries and video integration"
+                        ]
+                      },
                       {
                         icon: TrendingUp,
                         title: "Business Websites",
-                        description: "Custom business websites designed to increase your digital footprint, attract customers, and drive sales. Built for conversion and growth.",
-                        features: ["Lead Generation Focus", "SEO Optimized", "Mobile Responsive"]
+                        description: "Grow your business with a professional website that converts visitors into customers.",
+                        features: [
+                          "Custom design and branding",
+                          "Mobile-responsive layouts",
+                          "SEO optimization",
+                          "Lead generation forms"
+                        ]
                       },
                       {
                         icon: Users,
-                        title: "Resume Websites",
-                        description: "Transform your resume into a professional personal website that showcases your skills and helps you stand out to employers and recruiters.",
-                        features: ["Professional Portfolio", "Custom Domain", "Easy to Share"]
-                      },
-                      {
-                        icon: Target,
-                        title: "AI ATS Optimization",
-                        description: "Optimize your existing resume to rank at the top of Applicant Tracking Systems. Our AI analyzes job descriptions and restructures your resume for maximum ATS compatibility.",
-                        features: ["ATS Score Analysis", "Keyword Optimization", "Format Restructuring"]
+                        title: "Professional Resume Websites",
+                        description: "Transform your resume into an interactive portfolio that gets you noticed.",
+                        features: [
+                          "Interactive work history",
+                          "Skill visualization",
+                          "Project showcases",
+                          "Professional bio pages"
+                        ]
                       }
                     ].map((service, index) => (
                       <AnimatedSection key={index} delay={index * 0.2}>
