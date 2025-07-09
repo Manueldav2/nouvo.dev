@@ -27,6 +27,7 @@ import {
 import { LoadingScreen } from "./components/LoadingScreen";
 import { ContactForm } from './components/ContactForm';
 import RotatingText from "./components/RotatingText"
+import CalendlyWidget from './components/CalendlyWidget'
 
 const scrollToSection = (sectionId: string) => {
   const element = document.getElementById(sectionId);
@@ -324,81 +325,201 @@ export default function HomePage() {
                   <AnimatedSection className="flex flex-col items-center justify-center space-y-4 text-center">
                     <div className="space-y-2 max-w-3xl mx-auto">
                       <Badge variant="outline" className="border-[#a9927d] text-[#5e503f]">
-                        <FaPalette className="mr-2 inline-block" />
-                        Our Work
+                        <Eye className="mr-2 inline-block h-4 w-4" />
+                        Our Portfolio
                       </Badge>
                       <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-[#0a0908]">
                         Recent Projects
                       </h2>
                       <p className="text-[#22333b] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                        Take a look at some of our recent projects and see how we've helped businesses and professionals
-                        achieve their goals.
+                        Explore our latest work showcasing professional resumes and athletic portfolios.
                       </p>
                     </div>
                   </AnimatedSection>
-                  <div className="mx-auto grid max-w-5xl items-start gap-6 py-12 sm:grid-cols-2 lg:grid-cols-3 lg:gap-12">
-                    {[
-                      {
-                        title: "Resume Website",
-                        description: "Professional resume website for Bella Bland (Business Marketing)",
-                        image: "/resume_website.png",
-                        url: "https://bellakbland.com/",
-                        tags: ["Resume", "Web Design", "Business"]
-                      },
-                      {
-                        title: "Personal Portfolio",
-                        description: "Dance portfolio for Addi Reed, showcasing achievements and videos.",
-                        image: "/portfoli_pic.png",
-                        url: "https://addisonkreed.com",
-                        tags: ["Portfolio", "Web Design", "Dance"]
-                      },
-                      {
-                        title: "Business Website",
-                        description: "Blast & Beyond: Pressure washing, cleanouts, and yard help for NWA.",
-                        image: "/blast_beyond_png.png",
-                        url: "https://blast-beyond.web.app/",
-                        tags: ["Business", "Web Design", "Services"]
-                      }
-                    ].map((project, index) => (
-                      <AnimatedSection key={index} delay={index * 0.2}>
-                        <Card className="w-full group hover:shadow-lg transition-all duration-300 border-[#a9927d]/20 hover:border-[#a9927d]/40 h-full">
-                          <CardHeader>
-                            <a href={project.url} target="_blank" rel="noopener noreferrer">
-                              <div className="relative w-full h-48 md:h-56 overflow-hidden rounded-lg">
-                                <Image
-                                  src={project.image}
-                                  alt={project.title}
-                                  fill
-                                  className="object-cover w-full h-full transition-transform group-hover:scale-105 rounded-lg"
-                                />
-                              </div>
-                            </a>
-                            <CardTitle className="text-[#0a0908] group-hover:text-[#5e503f] transition-colors">
-                              {project.title}
-                            </CardTitle>
-                            <CardDescription className="text-[#22333b]">
-                              {project.description}
-                            </CardDescription>
-                          </CardHeader>
-                          <CardContent>
-                            <div className="flex flex-wrap gap-2">
-                              {project.tags.map((tag, i) => (
-                                <AnimatedElement key={i} delay={i * 0.1}>
-                                  <Badge variant="secondary" className="bg-[#a9927d]/20 text-[#5e503f] border-[#a9927d]/30">
-                                    {tag}
-                                  </Badge>
-                                </AnimatedElement>
-                              ))}
-                            </div>
-                            <div className="mt-4">
-                              <a href={project.url} target="_blank" rel="noopener noreferrer" className="inline-block text-[#5e503f] hover:underline font-medium">
-                                Visit Site
-                              </a>
-                            </div>
-                          </CardContent>
-                        </Card>
-                      </AnimatedSection>
-                    ))}
+
+                  <div className="grid gap-8 py-12 md:grid-cols-2 lg:grid-cols-3">
+                    {/* Kate Phillips Resume Website */}
+                    <AnimatedSection delay={0.1}>
+                      <Card className="overflow-hidden group">
+                        <div className="aspect-[16/10] relative overflow-hidden">
+                          <Image
+                            src="/nouvo_example_photos/kate_phillips_resume_website_photo.png"
+                            alt="Kate Phillips Resume Website"
+                            fill
+                            className="object-cover transition-transform duration-300 group-hover:scale-105"
+                            priority
+                          />
+                        </div>
+                        <CardContent className="p-4">
+                          <Badge variant="secondary" className="mb-2 bg-[#a9927d]/20 text-[#5e503f] border-[#a9927d]/30">
+                            Resume Website
+                          </Badge>
+                          <h3 className="text-xl font-semibold text-[#0a0908] mb-2">Kate Phillips</h3>
+                          <p className="text-[#22333b] text-sm mb-4">
+                            Professional resume website for a Biological Science Major showcasing academic excellence and leadership experience.
+                          </p>
+                          <Link 
+                            href="https://kateephillips.com" 
+                            target="_blank"
+                            className="inline-flex items-center text-[#5e503f] hover:text-[#22333b] transition-colors"
+                          >
+                            View Website <ArrowRight className="ml-2 h-4 w-4" />
+                          </Link>
+                        </CardContent>
+                      </Card>
+                    </AnimatedSection>
+
+                    {/* Manuel David Resume Website */}
+                    <AnimatedSection delay={0.2}>
+                      <Card className="overflow-hidden group">
+                        <div className="aspect-[16/10] relative overflow-hidden">
+                                                      <Image
+                              src="/nouvo_example_photos/manuel_david.dev.png"
+                              alt="Manuel David Developer Portfolio"
+                              fill
+                              className="object-cover transition-transform duration-300 group-hover:scale-105"
+                              priority
+                            />
+                        </div>
+                        <CardContent className="p-4">
+                          <Badge variant="secondary" className="mb-2 bg-[#a9927d]/20 text-[#5e503f] border-[#a9927d]/30">
+                            Developer Portfolio
+                          </Badge>
+                          <h3 className="text-xl font-semibold text-[#0a0908] mb-2">Manuel David</h3>
+                          <p className="text-[#22333b] text-sm mb-4">
+                            Full-stack developer portfolio highlighting technical skills, projects, and professional experience.
+                          </p>
+                          <Link 
+                            href="https://manueldavid.dev" 
+                            target="_blank"
+                            className="inline-flex items-center text-[#5e503f] hover:text-[#22333b] transition-colors"
+                          >
+                            View Website <ArrowRight className="ml-2 h-4 w-4" />
+                          </Link>
+                        </CardContent>
+                      </Card>
+                    </AnimatedSection>
+
+                    {/* Rush Bradley Sports Portfolio */}
+                    <AnimatedSection delay={0.3}>
+                      <Card className="overflow-hidden group">
+                        <div className="aspect-[16/10] relative overflow-hidden">
+                          <Image
+                            src="/nouvo_example_photos/rush_bradley_sports_web_photo.png"
+                            alt="Rush Bradley Baseball Portfolio"
+                            fill
+                            className="object-cover transition-transform duration-300 group-hover:scale-105"
+                            priority
+                          />
+                        </div>
+                        <CardContent className="p-4">
+                          <Badge variant="secondary" className="mb-2 bg-[#a9927d]/20 text-[#5e503f] border-[#a9927d]/30">
+                            Sports Portfolio
+                          </Badge>
+                          <h3 className="text-xl font-semibold text-[#0a0908] mb-2">Rush Bradley</h3>
+                          <p className="text-[#22333b] text-sm mb-4">
+                            Baseball athlete portfolio showcasing stats, highlights, and achievements for college recruitment.
+                          </p>
+                          <Link 
+                            href="https://rushbradley.com" 
+                            target="_blank"
+                            className="inline-flex items-center text-[#5e503f] hover:text-[#22333b] transition-colors"
+                          >
+                            View Website <ArrowRight className="ml-2 h-4 w-4" />
+                          </Link>
+                        </CardContent>
+                      </Card>
+                    </AnimatedSection>
+
+                    {/* Bella Bland Resume Website */}
+                    <AnimatedSection delay={0.4}>
+                      <Card className="overflow-hidden group">
+                        <div className="aspect-[16/10] relative overflow-hidden">
+                          <Image
+                            src="/resume_website.png"
+                            alt="Bella Bland Resume Website"
+                            fill
+                            className="object-cover transition-transform duration-300 group-hover:scale-105"
+                          />
+                        </div>
+                        <CardContent className="p-4">
+                          <Badge variant="secondary" className="mb-2 bg-[#a9927d]/20 text-[#5e503f] border-[#a9927d]/30">
+                            Resume Website
+                          </Badge>
+                          <h3 className="text-xl font-semibold text-[#0a0908] mb-2">Bella Bland</h3>
+                          <p className="text-[#22333b] text-sm mb-4">
+                            Professional resume website for Business Marketing major, showcasing achievements and experience.
+                          </p>
+                          <Link 
+                            href="https://bellakbland.com/" 
+                            target="_blank"
+                            className="inline-flex items-center text-[#5e503f] hover:text-[#22333b] transition-colors"
+                          >
+                            View Website <ArrowRight className="ml-2 h-4 w-4" />
+                          </Link>
+                        </CardContent>
+                      </Card>
+                    </AnimatedSection>
+
+                    {/* Addi Reed Dance Portfolio */}
+                    <AnimatedSection delay={0.5}>
+                      <Card className="overflow-hidden group">
+                        <div className="aspect-[16/10] relative overflow-hidden">
+                          <Image
+                            src="/portfoli_pic.png"
+                            alt="Addi Reed Dance Portfolio"
+                            fill
+                            className="object-cover transition-transform duration-300 group-hover:scale-105"
+                          />
+                        </div>
+                        <CardContent className="p-4">
+                          <Badge variant="secondary" className="mb-2 bg-[#a9927d]/20 text-[#5e503f] border-[#a9927d]/30">
+                            Dance Portfolio
+                          </Badge>
+                          <h3 className="text-xl font-semibold text-[#0a0908] mb-2">Addi Reed</h3>
+                          <p className="text-[#22333b] text-sm mb-4">
+                            Dance portfolio showcasing performances, achievements, and videos for professional opportunities.
+                          </p>
+                          <Link 
+                            href="https://addisonkreed.com" 
+                            target="_blank"
+                            className="inline-flex items-center text-[#5e503f] hover:text-[#22333b] transition-colors"
+                          >
+                            View Website <ArrowRight className="ml-2 h-4 w-4" />
+                          </Link>
+                        </CardContent>
+                      </Card>
+                    </AnimatedSection>
+
+                    {/* Blast & Beyond Business Website */}
+                    <AnimatedSection delay={0.6}>
+                      <Card className="overflow-hidden group">
+                        <div className="aspect-[16/10] relative overflow-hidden">
+                          <Image
+                            src="/blast_beyond_png.png"
+                            alt="Blast & Beyond Business Website"
+                            fill
+                            className="object-cover transition-transform duration-300 group-hover:scale-105"
+                          />
+                        </div>
+                        <CardContent className="p-4">
+                          <Badge variant="secondary" className="mb-2 bg-[#a9927d]/20 text-[#5e503f] border-[#a9927d]/30">
+                            Business Website
+                          </Badge>
+                          <h3 className="text-xl font-semibold text-[#0a0908] mb-2">Blast & Beyond</h3>
+                          <p className="text-[#22333b] text-sm mb-4">
+                            Business website for pressure washing and property maintenance services in Northwest Arkansas.
+                          </p>
+                          <Link 
+                            href="https://blast-beyond.web.app/" 
+                            target="_blank"
+                            className="inline-flex items-center text-[#5e503f] hover:text-[#22333b] transition-colors"
+                          >
+                            View Website <ArrowRight className="ml-2 h-4 w-4" />
+                          </Link>
+                        </CardContent>
+                      </Card>
+                    </AnimatedSection>
                   </div>
                 </div>
               </AnimatedSection>
@@ -471,33 +592,38 @@ export default function HomePage() {
             {/* Contact Section */}
             <ParallaxSection className="w-full py-12 bg-[#f2f4f3] border-t border-[#e5e5e5]/60">
               <AnimatedSection className="w-full">
-                <div id="contact" className="container mx-auto px-4 md:px-6 max-w-2xl">
-                  <div className="bg-white/90 rounded-xl shadow-lg p-8 flex flex-col md:flex-row gap-8 items-start justify-between">
-                    <div className="flex-1 w-full">
-                      <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-[#0a0908] mb-2 text-center md:text-left">Get in Touch</h2>
-                      <p className="mb-6 text-center md:text-left text-[#22333b]">Ready to start your project? Contact us today for a free consultation.</p>
-                      <ContactForm />
-                    </div>
-                    <div className="w-full md:w-64 flex flex-col items-center md:items-start gap-4 mt-8 md:mt-0">
-                      <h3 className="text-xl font-semibold text-[#0a0908] mb-2">Contact Information</h3>
-                      <div className="space-y-3 w-full">
-                        <div className="flex items-center gap-2">
-                          <FaUser className="text-[#a9927d]" />
-                          <span className="text-[#22333b]">Manuel David</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <FaPhone className="text-[#a9927d]" />
-                          <a href="tel:4792508678" className="text-[#22333b] hover:text-[#a9927d] transition-colors">
-                            (479) 250-8678
-                          </a>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <FaEnvelope className="text-[#a9927d]" />
-                          <a href="mailto:manuel@nouvo.dev" className="text-[#22333b] hover:text-[#a9927d] transition-colors">
-                            manuel@nouvo.dev
-                          </a>
+                <div id="contact" className="container mx-auto px-4 md:px-6 max-w-7xl">
+                  <div className="grid md:grid-cols-2 gap-8">
+                    <div className="bg-white/90 rounded-xl shadow-lg p-8 flex flex-col md:flex-row gap-8 items-start justify-between">
+                      <div className="flex-1 w-full">
+                        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-[#0a0908] mb-2 text-center md:text-left">Get in Touch</h2>
+                        <p className="mb-6 text-center md:text-left text-[#22333b]">Ready to start your project? Contact us today for a free consultation.</p>
+                        <ContactForm />
+                      </div>
+                      <div className="w-full md:w-64 flex flex-col items-center md:items-start gap-4 mt-8 md:mt-0">
+                        <h3 className="text-xl font-semibold text-[#0a0908] mb-2">Contact Information</h3>
+                        <div className="space-y-3 w-full">
+                          <div className="flex items-center gap-2">
+                            <FaUser className="text-[#a9927d]" />
+                            <span className="text-[#22333b]">Manuel David</span>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <FaPhone className="text-[#a9927d]" />
+                            <a href="tel:4792508678" className="text-[#22333b] hover:text-[#a9927d] transition-colors">
+                              (479) 250-8678
+                            </a>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <FaEnvelope className="text-[#a9927d]" />
+                            <a href="mailto:manuel@nouvo.dev" className="text-[#22333b] hover:text-[#a9927d] transition-colors">
+                              manuel@nouvo.dev
+                            </a>
+                          </div>
                         </div>
                       </div>
+                    </div>
+                    <div className="bg-white/90 rounded-xl shadow-lg overflow-hidden">
+                      <CalendlyWidget />
                     </div>
                   </div>
                 </div>
