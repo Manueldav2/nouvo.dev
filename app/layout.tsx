@@ -4,9 +4,37 @@ import { EmbedAI } from './components/EmbedAI'
 import { GoogleAnalytics } from './components/GoogleAnalytics'
 
 export const metadata: Metadata = {
-  title: 'nouvo',
-  description: 'Created with v0',
-  generator: 'v0.dev',
+  title: 'Nouvo | Custom Web Development',
+  description: 'Professional web development services specializing in athletic portfolios, business websites, and professional resume websites. Transform your online presence with Nouvo.',
+  generator: 'Next.js',
+  openGraph: {
+    title: 'Nouvo | Custom Web Development',
+    description: 'Professional web development services specializing in athletic portfolios, business websites, and professional resume websites.',
+    url: 'https://nouvo.dev',
+    siteName: 'Nouvo',
+    images: [
+      {
+        url: '/nouvo_logo.PNG',
+        width: 1200,
+        height: 630,
+        alt: 'Nouvo Logo',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Nouvo | Custom Web Development',
+    description: 'Professional web development services specializing in athletic portfolios, business websites, and professional resume websites.',
+    images: ['/nouvo_logo.PNG'],
+    creator: '@nouvo',
+  },
+  icons: {
+    icon: '/nouvo_logo.PNG',
+    shortcut: '/nouvo_logo.PNG',
+    apple: '/nouvo_logo.PNG',
+  },
 }
 
 export default function RootLayout({
@@ -17,7 +45,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <GoogleAnalytics />
       </head>
       <body>
