@@ -151,11 +151,12 @@ export default function HomePage() {
                         We Build{" "}
                         <RotatingText
                           texts={[
+                            "Business Websites",
                             "Athletic Portfolios",
-                            "Sports Highlights",
+                            "Resume Websites",
+                            "Career Success",
                             "Digital Solutions",
                             "Innovative Brands",
-                            "Career Success",
                             "Online Presence"
                           ]}
                           splitBy="words"
