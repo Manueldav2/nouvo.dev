@@ -664,30 +664,90 @@ export default function HomePage() {
                     <AnimatedSection>
                       <div className="prose prose-lg max-w-none mx-auto">
                         <p className="text-[#22333b] leading-relaxed">
-                          Hi, I'm Manuel David, a sophomore at Arizona State University majoring in Computer Information Systems. I launched Nouvo with one goal: to help people build powerful, standout digital identities through innovative and personalized websites.
+                          Hi, I'm Manuel David, a sophomore at Arizona State University majoring in Computer Information Systems. I launched Nouvo with one goal: to help businesses and individuals build powerful digital identities through innovative, AI-enhanced websites that drive real growth and results.
                         </p>
                         <p className="text-[#22333b] leading-relaxed">
-                          At Nouvo, we specialize in building sleek, high-quality websites for students, athletes, creatives, entrepreneurs, and businesses alike. Whether you're trying to land your dream internship, impress recruiters, promote your brand, or showcase your talents, we're here to make it happen—fast, clean, and effectively.
+                          At Nouvo, we specialize in building high-performance websites for businesses, entrepreneurs, students, athletes, and creatives alike. Whether you're aiming to increase sales, generate leads, land your dream internship, impress recruiters, or showcase your talents, we're here to make it happen—fast, clean, and effectively.
                         </p>
                         <p className="text-[#22333b] leading-relaxed">
-                          We believe that everyone deserves a digital presence that reflects their value. That's why we create interactive resume websites, professional portfolios, and dynamic business sites that elevate your personal or professional brand. These aren't just websites—they're tools designed to open doors.
+                          We believe that everyone deserves a digital presence that delivers real value. That's why we create interactive resume websites, professional portfolios, and dynamic business sites that elevate your brand and drive measurable results. These aren't just websites—they're growth tools designed to open doors and generate opportunities.
                         </p>
                       </div>
                     </AnimatedSection>
                     <AnimatedSection>
-                      <div className="bg-[#f2f4f3] p-6 rounded-lg mx-auto max-w-3xl">
-                        <h3 className="text-2xl font-semibold text-[#0a0908] mb-4">Why Resume Websites?</h3>
-                        <div className="prose prose-lg max-w-none">
-                          <p className="text-[#22333b] leading-relaxed">
-                            Today's job market is more competitive than ever. Traditional PDF resumes often get filtered out by automated tracking systems (ATS), which scan for exact keywords. Resume websites break through that wall. They offer a visual and interactive alternative that stands out—literally.
-                          </p>
-                          <p className="text-[#22333b] leading-relaxed">
-                            Recruiters are more likely to remember you when they see your face, your story, and your work, all laid out beautifully on a custom site. Employers take notice. Interviews get booked. Opportunities grow.
-                          </p>
-                          <p className="text-[#22333b] leading-relaxed">
-                            Plus, some companies now allow applicants to submit a CSV file and a website link. That second option gives you a serious edge—it ensures a human reviews your application and shows that you're ahead of the curve.
-                          </p>
-                        </div>
+                      <div className="space-y-12 max-w-4xl mx-auto">
+                        <AnimatedSection>
+                          <h2 className="text-4xl font-bold text-center mb-8 text-[#22333b]">Why Choose Nouvo</h2>
+                          
+                          {/* Business Websites Section */}
+                          <div className="mb-12 p-6 rounded-lg bg-white/80 backdrop-blur shadow-lg">
+                            <h3 className="text-2xl font-semibold mb-4 text-[#5e503f]">Business Websites</h3>
+                            <ul className="space-y-3 text-[#22333b]">
+                              <li className="flex items-start">
+                                <span className="mr-2">•</span>
+                                <span>AI-powered solutions to optimize your online presence and drive customer engagement</span>
+                              </li>
+                              <li className="flex items-start">
+                                <span className="mr-2">•</span>
+                                <span>Custom analytics dashboard to track growth and customer behavior</span>
+                              </li>
+                              <li className="flex items-start">
+                                <span className="mr-2">•</span>
+                                <span>Integrated lead generation tools and contact forms</span>
+                              </li>
+                              <li className="flex items-start">
+                                <span className="mr-2">•</span>
+                                <span>Mobile-responsive design optimized for all devices</span>
+                              </li>
+                            </ul>
+                          </div>
+
+                          {/* Resume Websites Section */}
+                          <div className="mb-12 p-6 rounded-lg bg-white/80 backdrop-blur shadow-lg">
+                            <h3 className="text-2xl font-semibold mb-4 text-[#5e503f]">Resume Websites</h3>
+                            <ul className="space-y-3 text-[#22333b]">
+                              <li className="flex items-start">
+                                <span className="mr-2">•</span>
+                                <span>Stand out from traditional PDF resumes with an interactive portfolio</span>
+                              </li>
+                              <li className="flex items-start">
+                                <span className="mr-2">•</span>
+                                <span>Showcase your projects, skills, and achievements in a dynamic way</span>
+                              </li>
+                              <li className="flex items-start">
+                                <span className="mr-2">•</span>
+                                <span>Easy-to-update content management system</span>
+                              </li>
+                              <li className="flex items-start">
+                                <span className="mr-2">•</span>
+                                <span>Professional design templates tailored to your industry</span>
+                              </li>
+                            </ul>
+                          </div>
+
+                          {/* Athletic Portfolio Section */}
+                          <div className="mb-12 p-6 rounded-lg bg-white/80 backdrop-blur shadow-lg">
+                            <h3 className="text-2xl font-semibold mb-4 text-[#5e503f]">Athletic Portfolios</h3>
+                            <ul className="space-y-3 text-[#22333b]">
+                              <li className="flex items-start">
+                                <span className="mr-2">•</span>
+                                <span>Highlight your athletic achievements and statistics</span>
+                              </li>
+                              <li className="flex items-start">
+                                <span className="mr-2">•</span>
+                                <span>Embedded video highlights and performance metrics</span>
+                              </li>
+                              <li className="flex items-start">
+                                <span className="mr-2">•</span>
+                                <span>Recruitment-friendly format for coaches and scouts</span>
+                              </li>
+                              <li className="flex items-start">
+                                <span className="mr-2">•</span>
+                                <span>Social media integration for broader exposure</span>
+                              </li>
+                            </ul>
+                          </div>
+                        </AnimatedSection>
                       </div>
                     </AnimatedSection>
                     <AnimatedSection>
@@ -700,19 +760,19 @@ export default function HomePage() {
                             <ul className="space-y-3">
                               <li className="flex items-start gap-2">
                                 <BsCheck2Circle className="h-5 w-5 text-[#a9927d] mt-1" />
-                                <span className="text-[#22333b]">Resume Websites that are visually stunning, fully clickable, and uniquely personalized.</span>
+                                <span className="text-[#22333b]">Business Websites optimized for growth, leads, and revenue generation</span>
                               </li>
                               <li className="flex items-start gap-2">
                                 <BsCheck2Circle className="h-5 w-5 text-[#a9927d] mt-1" />
-                                <span className="text-[#22333b]">Professional Resume Creation that passes ATS filters and gets you noticed.</span>
+                                <span className="text-[#22333b]">AI-Enhanced Features including chatbots and analytics</span>
                               </li>
                               <li className="flex items-start gap-2">
                                 <BsCheck2Circle className="h-5 w-5 text-[#a9927d] mt-1" />
-                                <span className="text-[#22333b]">Portfolio Sites for athletes, creatives, and professionals—including media-rich pages with photos and videos.</span>
+                                <span className="text-[#22333b]">Resume Websites that are visually stunning and ATS-optimized</span>
                               </li>
                               <li className="flex items-start gap-2">
                                 <BsCheck2Circle className="h-5 w-5 text-[#a9927d] mt-1" />
-                                <span className="text-[#22333b]">Business Websites designed to drive traffic and communicate brand identity clearly and creatively.</span>
+                                <span className="text-[#22333b]">Portfolio Sites for athletes and professionals with rich media integration</span>
                               </li>
                             </ul>
                           </CardContent>
@@ -723,11 +783,11 @@ export default function HomePage() {
                           </CardHeader>
                           <CardContent>
                             <p className="text-[#22333b] leading-relaxed">
-                              You'll be involved every step of the way—from concept to mockups to deployment. Whether you already have a resume or need help building one from scratch, we'll turn it into something that represents you better than any one-page PDF ever could.
+                              You'll be involved every step of the way—from concept to deployment. Whether you're a business owner looking to grow your online presence or a professional building your personal brand, we'll create something that drives real results.
                             </p>
                             <div className="mt-4">
-                              <p className="text-[#22333b] font-semibold">We're here to help you stand out.</p>
-                              <p className="text-[#22333b] font-semibold">We're Nouvo—where your future meets design.</p>
+                              <p className="text-[#22333b] font-semibold">We're here to help you succeed.</p>
+                              <p className="text-[#22333b] font-semibold">We're Nouvo—where innovation meets growth.</p>
                             </div>
                           </CardContent>
                         </Card>
