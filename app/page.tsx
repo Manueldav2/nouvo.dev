@@ -388,8 +388,8 @@ export default function HomePage() {
                     <AnimatedSection delay={0.2}>
                       <Card className="overflow-hidden group">
                         <div className="aspect-[16/10] relative overflow-hidden">
-                                                      <Image
-                              src="/nouvo_example_photos/manuel_david.dev.png"
+                            <Image
+                              src="/nouvo_example_photos/manuel_david_resweb_photo.png"
                               alt="Manuel David Developer Portfolio"
                               fill
                               className="object-cover transition-transform duration-300 group-hover:scale-105"
