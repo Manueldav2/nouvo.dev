@@ -48,7 +48,7 @@ export function WebsiteIdeaGenerator() {
       // Validate input before making the request
       validateInput(userInput);
 
-      const response = await fetch('https://nouvo-dev-backend-4fd39a72f7b1.herokuapp.com/api/generate', {
+      const response = await fetch('https://nouvo-ai-95cf2190cd12.herokuapp.com/api/generate', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
